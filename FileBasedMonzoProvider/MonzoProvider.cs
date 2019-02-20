@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace FileBasedMonzoProvider
 {
-    public class FileBasedMonzoProvider
+    public class MonzoProvider
     {
         private readonly MonzoConfig _config = new MonzoConfig();
         private readonly MonzoAuthorizationClient _authClient;
 
-        public FileBasedMonzoProvider(IConfigurationRoot config)
+        public MonzoProvider(IConfigurationRoot config)
         {
             config.Bind(_config);
             _authClient = new MonzoAuthorizationClient(_config.MonzoClientId, _config.MonzoClientSecret);
