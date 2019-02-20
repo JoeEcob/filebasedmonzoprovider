@@ -9,7 +9,7 @@ Create a JSON confile file in your project similar to the following:
 
 ```
 {
-  "oauthPath": "~/.config/monzo-exporter/",
+  "oauthPath": "~/.config/monzo-exporter/monzo-oauth.json",
   "monzoClientId": "abc123",
   "monzoClientSecret": "abc123",
   "monzoRedirectUri": "https://localhost"

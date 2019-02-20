@@ -85,8 +85,15 @@ namespace FileBasedMonzoProvider
 
         private async Task<bool> IsValid(AccessToken token)
         {
-            var whoAmI = await new MonzoClient(token.Value).WhoAmIAsync();
-            return whoAmI.Authenticated;
+            try
+            {
+                var whoAmI = await new MonzoClient(token.Value).WhoAmIAsync();
+                return whoAmI.Authenticated;
+            }
+            catch (MonzoException)
+            {
+                return false;
+            }
         }
 
         private async Task<AccessToken> RefreshToken(string refresh)
